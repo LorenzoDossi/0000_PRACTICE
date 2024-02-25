@@ -1,0 +1,13 @@
+// se .theme-light o data-theme="light" setta --color-bg: --color-text di conseguenza
+
+.theme-light,
+[data-theme='light'] {
+  --theme-color-bg: var(--color-white);
+  --theme-color-text: var(--color-black);
+}
+
+.theme-dark,
+[data-theme='dark'] {
+  --theme-color-bg: var(--color-black);
+  --theme-color-text: var(--color-white);
+}

@@ -1,0 +1,50 @@
+html {
+  scroll-behavior: smooth;
+
+  &.no-transition {
+    * {
+      transition: none;
+    }
+  }
+
+  &.is-transitioning {
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &.is-loading {
+    *,
+    *::after,
+    *::before {
+      cursor: wait !important;
+    }
+  }
+
+  * {
+    &::selection {
+      // color: var(--color-black);
+      // background-color: var(--color-gray-01);
+    }
+  }
+
+  body {
+    --body-color-background: var(--color-white);
+
+    overscroll-behavior-y: none;
+
+    // opacity: 1;
+
+    // transition: opacity 1s;
+    transition: color 1s 0s, opacity 0s;
+  }
+}
+
+a {
+  -webkit-touch-callout: none;
+  user-select: none;
+
+  &[href^='mailto:'] {
+    user-select: auto;
+  }
+}

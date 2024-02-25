@@ -1,0 +1,9 @@
+%flow {
+  > * + * {
+    padding-top: var(--flow, 10rem);
+  }
+}
+
+.u-flow {
+  @extend %flow;
+}

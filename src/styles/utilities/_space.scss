@@ -1,0 +1,23 @@
+.u-space-s {
+  --flow: var(--space-xl);
+}
+
+.u-space-m {
+  --flow: var(--space-2xl);
+}
+
+.u-space-l {
+  --flow: var(--space-3xl);
+
+  @include media-breakpoint-up(sm) {
+    --flow: var(--space-5xl);
+  }
+}
+
+.u-space-xl {
+  --flow: var(--space-5xl);
+
+  @include media-breakpoint-up(sm) {
+    --flow: var(--space-8xl);
+  }
+}

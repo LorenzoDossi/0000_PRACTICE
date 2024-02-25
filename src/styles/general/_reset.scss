@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--body-color, #000);
+  font-family: var(--font-family-body);
+  font-size: var(--body-font-size);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: var(--body-line-height);
+  background-color: var(--body-color-background, #fff);
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+aside,
+main,
+nav {
+  display: block;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  color: var(--body-color);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+ul[role='tablist'],
+ol[role='tablist'],
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+a {
+  color: currentcolor;
+  text-decoration: none;
+  outline: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button,
+[role='button'] {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  background: none;
+  border: none;
+  box-shadow: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+select {
+  // Remove the inheritance of word-wrap in Safari.
+  // See https://github.com/twbs/bootstrap/issues/24990
+  word-wrap: normal;
+
+  // Undo the opacity change from Chrome
+  &:disabled {
+    opacity: 1;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  border: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+svg {
+  overflow: visible;
+}
+
+iframe {
+  border: none;
+}
+
+dfn {
+  font-style: normal;
+}
+
+abbr {
+  text-decoration: none;
+}

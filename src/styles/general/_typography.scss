@@ -1,0 +1,54 @@
+%heading {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  line-height: var(--heading-line-height, calc(1.08em + 4px));
+  text-transform: uppercase;
+
+  .theme-black & {
+    color: var(--color-gray-01);
+    transition: color 1s 0s;
+  }
+
+  .c-overlay & {
+    color: var(--color-black) !important;
+  }
+}
+
+.f-mono {
+  font-family: var(--font-family-mono);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:not(.no-heading) {
+    @extend %heading;
+  }
+}
+
+h1 {
+  font-size: var(--step-10);
+}
+
+h2 {
+  font-size: var(--step-7);
+}
+
+h3 {
+  font-size: var(--step-6);
+}
+
+h4 {
+  font-size: var(--step-5);
+}
+
+h5 {
+  font-size: var(--step-4);
+}
+
+h6 {
+  font-size: var(--step-3);
+}

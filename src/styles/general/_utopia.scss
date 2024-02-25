@@ -1,0 +1,49 @@
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1600,18,1.2,10,2,&s=0.75|0.5,1.5|2|3|4|6|7|8|9|10|11,s-l&g=s,l,xl,12 */
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.67rem + 0.11vw), 0.78rem);
+  --step--1: clamp(0.83rem, calc(0.81rem + 0.13vw), 0.94rem);
+  --step-0: clamp(1rem, calc(0.97rem + 0.16vw), 1.13rem);
+  --step-1: clamp(1.2rem, calc(1.16rem + 0.19vw), 1.35rem);
+  --step-2: clamp(1.44rem, calc(1.4rem + 0.23vw), 1.62rem);
+  --step-3: clamp(1.73rem, calc(1.67rem + 0.27vw), 1.94rem);
+  --step-4: clamp(2.07rem, calc(2.01rem + 0.32vw), 2.33rem);
+  --step-5: clamp(2.49rem, calc(2.41rem + 0.39vw), 2.8rem);
+  --step-6: clamp(2.99rem, calc(2.89rem + 0.47vw), 3.36rem);
+  --step-7: clamp(3.58rem, calc(3.47rem + 0.56vw), 4.03rem);
+  --step-8: clamp(4.3rem, calc(4.17rem + 0.67vw), 4.84rem);
+  --step-9: clamp(5.16rem, calc(5rem + 0.81vw), 5.81rem);
+  --step-10: clamp(6.19rem, calc(6rem + 0.97vw), 6.97rem);
+
+  /* grid */
+  --space-2xs: clamp(0.5rem, calc(0.48rem + 0.08vw), 0.56rem);
+  --space-xs: clamp(0.75rem, calc(0.72rem + 0.16vw), 0.88rem);
+  --space-s: clamp(1rem, calc(0.97rem + 0.16vw), 1.13rem);
+  --space-m: clamp(1.5rem, calc(1.45rem + 0.23vw), 1.69rem);
+  --space-l: clamp(2rem, calc(1.94rem + 0.31vw), 2.25rem);
+  --space-xl: clamp(3rem, calc(2.91rem + 0.47vw), 3.38rem);
+  --space-2xl: clamp(4rem, calc(3.88rem + 0.63vw), 4.5rem);
+  --space-3xl: clamp(6rem, calc(5.81rem + 0.94vw), 6.75rem);
+  --space-4xl: clamp(7rem, calc(6.78rem + 1.09vw), 7.88rem);
+  --space-5xl: clamp(8rem, calc(7.75rem + 1.25vw), 9rem);
+  --space-6xl: clamp(9rem, calc(8.72rem + 1.41vw), 10.13rem);
+  --space-7xl: clamp(10rem, calc(9.69rem + 1.56vw), 11.25rem);
+  --space-8xl: clamp(11rem, calc(10.66rem + 1.72vw), 12.38rem);
+
+  /* One-up pairs */
+  --space-2xs-xs: clamp(0.5rem, calc(0.41rem + 0.47vw), 0.88rem);
+  --space-xs-s: clamp(0.75rem, calc(0.66rem + 0.47vw), 1.13rem);
+  --space-s-m: clamp(1rem, calc(0.83rem + 0.86vw), 1.69rem);
+  --space-m-l: clamp(1.5rem, calc(1.31rem + 0.94vw), 2.25rem);
+  --space-l-xl: clamp(2rem, calc(1.66rem + 1.72vw), 3.38rem);
+  --space-xl-2xl: clamp(3rem, calc(2.63rem + 1.88vw), 4.5rem);
+  --space-2xl-3xl: clamp(4rem, calc(3.31rem + 3.44vw), 6.75rem);
+  --space-3xl-4xl: clamp(6rem, calc(5.53rem + 2.34vw), 7.88rem);
+  --space-4xl-5xl: clamp(7rem, calc(6.5rem + 2.5vw), 9rem);
+  --space-5xl-6xl: clamp(8rem, calc(7.47rem + 2.66vw), 10.13rem);
+  --space-6xl-7xl: clamp(9rem, calc(8.44rem + 2.81vw), 11.25rem);
+  --space-7xl-8xl: clamp(10rem, calc(9.41rem + 2.97vw), 12.38rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1rem, calc(0.69rem + 1.56vw), 2.25rem);
+}

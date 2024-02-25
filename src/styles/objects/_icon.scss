@@ -1,0 +1,29 @@
+.o-icon {
+  display: inline-block;
+  width: var(--step-0);
+  height: var(--step-0);
+  stroke-width: var(--stroke-width);
+  stroke: currentcolor;
+  fill: none;
+}
+
+.o-icon--linkedin,
+.o-icon--vimeo,
+.o-icon--instagram {
+  width: calc(var(--step-0) + 2px);
+  height: calc(var(--step-0) + 2px);
+  fill: currentcolor;
+  stroke: none;
+}
+
+.o-icon--logo-condensed {
+  width: 49px;
+  height: 36px;
+  fill: currentcolor;
+  stroke: none;
+}
+
+.o-icon__svg {
+  width: 100%;
+  height: 100%;
+}

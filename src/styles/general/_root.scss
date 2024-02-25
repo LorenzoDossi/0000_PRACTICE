@@ -1,0 +1,50 @@
+@use 'sass:color';
+@use 'sass:map';
+
+:root {
+  --initial-vh: 1vh;
+  --actual-vh: 1vh;
+  --font-family-heading: 'FKScreamer', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen-sans, ubuntu, cantarell, 'Helvetica Neue', sans-serif;
+  --font-family-body: 'SourceSansPro', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen-sans, ubuntu, cantarell, 'Helvetica Neue', sans-serif;
+  --font-family-mono: 'RobotoMono', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen-sans, ubuntu, cantarell, 'Helvetica Neue', sans-serif;
+  --body-font-size: var(--step-0);
+  --body-font-weight: 400;
+  --body-line-height: 1.4;
+  --heading-line-height: 0.9;
+  --stroke-width: 2px;
+  --body-color: var(--color-black);
+  --logo-height: calc(var(--space-2xl) * 1);
+  --logo-width: calc(#{$logo-width} / #{$logo-height} * var(--logo-height));
+  --color-placeholder: var(--color-gray-01);
+  --column-width: calc((100vw - var(--container-padding) * 2 - var(--gutter) * 11) / 12);
+  --column-width-gutter: calc(var(--column-width) + var(--gutter));
+  --column-width-2-gutter: calc(var(--column-width) + var(--gutter) * 2);
+  --padding-bg-image: var(--space-5xl) 0;
+  --site-header-height: calc(var(--logo-height) + var(--container-padding) * 2); // todo: chiedere a marghe che ne pensa
+  --banner-padding: 8px;
+  --banner-radius: 10px;
+
+  @include breakpoint-property(--container-padding, $container-padding);
+  @include breakpoint-property(--gutter, $grid-gutter);
+
+  @include media-breakpoint-up(sm) {
+    --logo-height: var(--space-2xl);
+    --site-header-height: calc(var(--logo-height) + var(--container-padding) * 2);
+  }
+
+  @include media-breakpoint-up(md) {
+    --padding-bg-image: 40vh 0;
+  }
+
+  &.theme-black {
+    --color-placeholder: var(--color-gray-04);
+  }
+
+  .c-overlay {
+    --color-placeholder: var(--color-gray-01) !important;
+  }
+
+  @each $key, $value in $colors {
+    #{'--color-' + $key}: $value;
+  }
+}

@@ -1,0 +1,21 @@
+.o-text-reveal {
+  --speed: 1s;
+
+  &:not(.has-split-text) {
+    visibility: hidden;
+  }
+}
+
+.o-text-reveal__wrapper {
+  overflow: hidden;
+}
+
+.o-text-reveal__item {
+  will-change: transform;
+  transition: transform var(--speed) cubic-bezier('easeOutQuint') calc(var(--index, 0) * 0.15s);
+  transform: translateY(110%); // "Ù"
+
+  .dom-loaded .is-inview & {
+    transform: translateY(0%);
+  }
+}

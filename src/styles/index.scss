@@ -1,0 +1,12 @@
+@import 'mixins';
+@import 'functions';
+@import 'general';
+@import 'objects/*.*';
+@import 'vendors';
+@import 'utilities/*.*';
+@import 'components/*.*';
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+}

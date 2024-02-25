@@ -1,0 +1,19 @@
+.o-grid {
+  display: grid;
+  grid-template-rows: repeat(var(--rows, 1), 1fr);
+  grid-template-columns: repeat(var(--columns, 12), 1fr);
+  gap: var(--gutter-y, var(--gutter)) var(--gutter-x, var(--gutter));
+
+  > * {
+    grid-column: auto / span var(--column-span, 12);
+    grid-column-start: var(--column-start, auto);
+  }
+}
+
+.o-col-1 {
+  --column-span: 1;
+}
+
+.o-col-6 {
+  --column-span: 6;
+}
