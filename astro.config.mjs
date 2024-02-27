@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sassGlobImports from 'vite-plugin-sass-glob-import';
+import glsl from 'vite-plugin-glsl'
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +14,7 @@ export default defineConfig({
 	    	devSourcemap: true,
 	    },
 		plugins: [
+			glsl(),
 			sassGlobImports()
 		]
 	},
