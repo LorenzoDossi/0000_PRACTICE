@@ -3,8 +3,8 @@ import math from '../utils/math'
 import ease from '../utils/ease'
 import properties from '../global/properties'
 import { OrbitControls } from 'three/addons/controls/OrbitControls'
-import vertexShader from './shaders/01_flame.vert'
-import fragmentShader from './shaders/01_flame.frag'
+import vertexShader from './shaders/02_function.vert'
+import fragmentShader from './shaders/02_function.frag'
 
 class Experience {
     init() {
