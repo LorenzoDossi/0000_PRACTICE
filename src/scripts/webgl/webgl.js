@@ -3,15 +3,15 @@ import math from '../utils/math'
 import ease from '../utils/ease'
 import properties from '../global/properties'
 import { OrbitControls } from 'three/addons/controls/OrbitControls'
-import vertexShader from './shaders/02_function.vert'
-import fragmentShader from './shaders/02_function.frag'
+import vertexShader from './shaders/03_patterns.vert'
+import fragmentShader from './shaders/03_patterns.frag'
 
 class Experience {
     init() {
         document.body.innerHTML =  ''
         this.dateTime = performance.now()
         this.time = 0
-        this.fov = 50
+        this.fov = 60
         this.distance = (window.innerHeight / 2) / Math.tan((this.fov / 2) * Math.PI / 180)
 
         this.scene = new THREE.Scene()
@@ -33,7 +33,7 @@ class Experience {
     createPlane() {
         let shortSize = window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth
         let gap = math.fit(shortSize, 320, 1440, 10, 100)
-        this.geometry = new THREE.PlaneGeometry(shortSize - gap, shortSize - gap)
+        this.geometry = new THREE.PlaneGeometry(shortSize - gap, shortSize - gap, 1000, 1000)
         this.material = new THREE.ShaderMaterial({
             vertexShader,
             fragmentShader,

@@ -10,7 +10,7 @@ float plot(vec2 st, float pct){
 void main() {
     vec2 uv = (v_uv * 2. -1.) * 2.;
 
-    float y = ceil(cos(uv.x));
+    float y = cos(uv.x);
 
     float line = plot(uv, y);
 
