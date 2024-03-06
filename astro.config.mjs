@@ -15,7 +15,7 @@ export default defineConfig({
 	    },
 		plugins: [
 			glsl(),
-			sassGlobImports()
+			sassGlobImports(),
 		]
 	},
 });

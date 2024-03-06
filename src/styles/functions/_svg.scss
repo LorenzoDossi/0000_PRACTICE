@@ -1,0 +1,30 @@
+$encoding-reference: (
+  //('%','%25'),  // Encode "%" first, otherwise the "%" from encoded code would be encoded again (which would be bad)
+  ('<','%3C'),
+  ('>','%3E'),
+  //('"','%22'),  // Replace " with ' because that's shorter than %22 and normally working
+  ('"','\''),
+  ('#','%23'),
+  ('&','%26')
+}
+
+// Get encoded SVG from a list of SVGs and replace inline style
+@function svg($svg-name, $svg-style: '', $encode: true, $svg: $svg) {
+  $svg: map_get($svg, $svg_name);
+  $svg: str-replace($svg, '{$svg-style}', $svg-style);
+
+  @if $encode == true {
+    $svg: svg-encode($svg);
+  }
+
+  @return $svg;
+}
+
+// SVG Encode
+@function svg-encode($svg) {
+  @each $char, $encoded in $encoding-reference {
+    $svg: str-replace($svg, $char, $encoded);
+  }
+
+  @return 'data:image/svg+xml,' + $svg;
+}

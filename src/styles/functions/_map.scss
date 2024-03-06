@@ -1,0 +1,116 @@
+@use 'sass:map';
+
+@function map-loop($map, $func, $args...) {
+  $_map: ();
+
+  @each $key, $value in $map {
+    // allow to pass the $key and $value of the map as an function argument
+    $_args: ();
+
+    @each $arg in $args {
+      $_args: append($_args, if($arg == '$key', $key, if($arg == '$value', $value, $arg)));
+    }
+
+    $_map: map-merge($_map, ($key: call(get-function($func), $_args...))); /* stylelint-disable-line order/order */
+  }
+
+  @return $_map;
+}
+
+@function map-get-next($map, $key, $fallback: false, $return: value) {
+  /* stylelint-disable max-nesting-depth */
+  // Check if map is valid
+  @if type-of($map) == map {
+    // Check if key exists in map
+    @if map-has-key($map, $key) {
+      // Init index counter variable
+      $i: 0;
+
+      // Init key index
+      $key-index: false;
+
+      // Traverse map for key
+      @each $map-key, $map-value in $map {
+        // Update index
+        $i: $i + 1;
+
+        // If map key found, set key index
+        @if $map-key == $key {
+          $key-index: $i;
+        }
+
+        // If next index return next value or key based on $return
+        @if $i == $key-index + 1 {
+          @if $return == key {
+            @return $map-key;
+          } @else {
+            @return $map-value;
+          }
+        }
+
+        // If last entry return false
+        @if $i == length($map) {
+          @return $fallback;
+        }
+      }
+
+      // @warn 'No next map item for key #{$key}';
+      @return $fallback;
+    }
+
+    // @warn 'No valid key #{$key} in map';
+    @return $fallback;
+  }
+
+  // @warn 'No valid map';
+  @return $fallback;
+  /* stylelint-enable max-nesting-depth */
+}
+
+@function map-reverse($map) {
+  $result: ();
+
+  @if type-of($map) == 'map' {
+    $keys: map-keys($map);
+    $map-reversed: ();
+
+    @for $i from length($keys) through 1 {
+      $map-reversed: map-merge(
+        $map-reversed,
+        (nth($keys, $i): map-get($map, nth($keys, $i)))
+      );
+    }
+
+    @if type-of($map-reversed) == 'map' {
+      $result: $map-reversed;
+    } @else {
+      @warn 'There was an error reversing the order of "#{$map}"';
+    }
+  } @else {
+    // @warn '"#{$map}" is not a valid map';
+  }
+
+  @return $result;
+}
+
+// Create a map from lists of keys and values
+// map lenght will be equal to the shorter list
+@function map-from-keys-values($keys, $values) {
+  $map: ();
+
+  @if type-of($keys) != 'list' {
+    $keys: append((), $keys);
+  }
+
+  @if type-of($values) != 'list' {
+    $values: append((), $values);
+  }
+
+  @if length($keys) > 1 and length($values) > 1 {
+    @for $i from 1 through min(length($keys), length($values)) {
+      $map: map.set($map, nth($keys, $i), nth($values, $i));
+    }
+  }
+
+  @return $map;
+}

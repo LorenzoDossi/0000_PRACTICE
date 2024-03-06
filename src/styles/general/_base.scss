@@ -1,18 +1,6 @@
 html {
   scroll-behavior: smooth;
 
-  &.no-transition {
-    * {
-      transition: none;
-    }
-  }
-
-  &.is-transitioning {
-    * {
-      pointer-events: none;
-    }
-  }
-
   &.is-loading {
     *,
     *::after,
@@ -29,7 +17,8 @@ html {
   }
 
   body {
-    --body-color-background: var(--color-white);
+    --body-text-color: var(--color-black);
+    --body-background-color: var(--color-white);
 
     overscroll-behavior-y: none;
 
@@ -42,9 +31,12 @@ html {
 
 a {
   -webkit-touch-callout: none;
+  color: currentcolor;
+  text-decoration: none;
+  outline: none;
   user-select: none;
 
-  &[href^='mailto:'] {
-    user-select: auto;
+  &:hover {
+    text-decoration: underline;
   }
 }

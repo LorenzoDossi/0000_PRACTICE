@@ -9,11 +9,3 @@
     grid-column-start: var(--column-start, auto);
   }
 }
-
-.o-col-1 {
-  --column-span: 1;
-}
-
-.o-col-6 {
-  --column-span: 6;
-}
